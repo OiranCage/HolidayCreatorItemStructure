@@ -1,0 +1,21 @@
+{
+    "name": "oirancage/holiday-creator-item-structure",
+    "type": "library",
+    "require-dev": {
+        "pocketmine/nbt": "^0.3.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "famima65536",
+            "email": "famima65536@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "oirancage\\HolidayCreatorItemStructure\\": "src"
+        }
+    }
+}

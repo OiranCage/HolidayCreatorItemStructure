@@ -1,0 +1,103 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "54d480f6c978f883a748f521bcaf9f36",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "pocketmine/binaryutils",
+            "version": "0.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pmmp/BinaryUtils.git",
+                "reference": "5ac7eea91afbad8dc498f5ce34ce6297d5e6ea9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pmmp/BinaryUtils/zipball/5ac7eea91afbad8dc498f5ce34ce6297d5e6ea9a",
+                "reference": "5ac7eea91afbad8dc498f5ce34ce6297d5e6ea9a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "php-64bit": "*"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "1.3.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpstan/phpstan-strict-rules": "^1.0.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pocketmine\\utils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "Classes and methods for conveniently handling binary data",
+            "support": {
+                "issues": "https://github.com/pmmp/BinaryUtils/issues",
+                "source": "https://github.com/pmmp/BinaryUtils/tree/0.2.4"
+            },
+            "time": "2022-01-12T18:06:33+00:00"
+        },
+        {
+            "name": "pocketmine/nbt",
+            "version": "0.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pmmp/NBT.git",
+                "reference": "f4321be50df1a18b9f4e94d428a2e68a6e2ac2b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pmmp/NBT/zipball/f4321be50df1a18b9f4e94d428a2e68a6e2ac2b4",
+                "reference": "f4321be50df1a18b9f4e94d428a2e68a6e2ac2b4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "php-64bit": "*",
+                "pocketmine/binaryutils": "^0.2.0"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "1.7.7",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pocketmine\\nbt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "PHP library for working with Named Binary Tags",
+            "support": {
+                "issues": "https://github.com/pmmp/NBT/issues",
+                "source": "https://github.com/pmmp/NBT/tree/0.3.3"
+            },
+            "time": "2022-07-06T14:13:26+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
