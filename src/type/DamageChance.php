@@ -1,8 +1,8 @@
 <?php
 
-namespace oirancage\HolidayCreatorItemLoader\type;
+namespace oirancage\HolidayCreatorItemStructure\type;
 
-use oirancage\HolidayCreatorItemLoader\utils\Validator;
+use oirancage\HolidayCreatorItemStructure\utils\Validator;
 use pocketmine\nbt\tag\CompoundTag;
 
 class DamageChance implements IType{

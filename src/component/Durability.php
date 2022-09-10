@@ -1,9 +1,9 @@
 <?php
 
-namespace oirancage\HolidayCreatorItemLoader\component;
+namespace oirancage\HolidayCreatorItemStructure\component;
 
-use oirancage\HolidayCreatorItemLoader\type\DamageChance;
-use oirancage\HolidayCreatorItemLoader\utils\Validator;
+use oirancage\HolidayCreatorItemStructure\type\DamageChance;
+use oirancage\HolidayCreatorItemStructure\utils\Validator;
 use pocketmine\nbt\tag\CompoundTag;
 
 class Durability implements IComponent{

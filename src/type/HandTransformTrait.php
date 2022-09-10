@@ -1,6 +1,6 @@
 <?php
 
-namespace oirancage\HolidayCreatorItemLoader\type;
+namespace oirancage\HolidayCreatorItemStructure\type;
 
 use pocketmine\nbt\tag\CompoundTag;
 

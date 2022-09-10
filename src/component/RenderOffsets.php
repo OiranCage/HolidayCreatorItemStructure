@@ -1,9 +1,9 @@
 <?php
 
-namespace oirancage\HolidayCreatorItemLoader\component;
+namespace oirancage\HolidayCreatorItemStructure\component;
 
-use oirancage\HolidayCreatorItemLoader\type\MainHand;
-use oirancage\HolidayCreatorItemLoader\type\OffHand;
+use oirancage\HolidayCreatorItemStructure\type\MainHand;
+use oirancage\HolidayCreatorItemStructure\type\OffHand;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\Tag;
 

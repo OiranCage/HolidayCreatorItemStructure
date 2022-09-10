@@ -1,8 +1,8 @@
 <?php
 
-namespace oirancage\HolidayCreatorItemLoader\type;
+namespace oirancage\HolidayCreatorItemStructure\type;
 
-use oirancage\HolidayCreatorItemLoader\component\IComponent;
+use oirancage\HolidayCreatorItemStructure\component\IComponent;
 use pocketmine\nbt\tag\CompoundTag;
 
 class Icon implements IType{

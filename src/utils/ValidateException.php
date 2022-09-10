@@ -1,6 +1,6 @@
 <?php
 
-namespace oirancage\HolidayCreatorItemLoader\utils;
+namespace oirancage\HolidayCreatorItemStructure\utils;
 
 use InvalidArgumentException;
 

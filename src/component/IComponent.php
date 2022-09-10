@@ -1,8 +1,8 @@
 <?php
 
-namespace oirancage\HolidayCreatorItemLoader\component;
+namespace oirancage\HolidayCreatorItemStructure\component;
 
-use oirancage\HolidayCreatorItemLoader\type\IType;
+use oirancage\HolidayCreatorItemStructure\type\IType;
 
 interface IComponent extends IType{
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace oirancage\HolidayCreatorItemLoader\utils;
+namespace oirancage\HolidayCreatorItemStructure\utils;
 
 final class Validator{
 	private function __construct(){

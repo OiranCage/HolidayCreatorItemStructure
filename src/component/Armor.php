@@ -1,8 +1,8 @@
 <?php
 
-namespace oirancage\HolidayCreatorItemLoader\component;
+namespace oirancage\HolidayCreatorItemStructure\component;
 
-use oirancage\HolidayCreatorItemLoader\utils\Validator;
+use oirancage\HolidayCreatorItemStructure\utils\Validator;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\Tag;
 

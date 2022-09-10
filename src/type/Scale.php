@@ -1,12 +1,10 @@
 <?php
 
-namespace oirancage\HolidayCreatorItemLoader\type;
+namespace oirancage\HolidayCreatorItemStructure\type;
 
-use oirancage\HolidayCreatorItemLoader\component\Cooldown;
 use pocketmine\nbt\NBT;
 use pocketmine\nbt\tag\FloatTag;
 use pocketmine\nbt\tag\ListTag;
-use pocketmine\nbt\tag\Tag;
 
 class Scale implements IType{
 
