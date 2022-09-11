@@ -2,9 +2,8 @@
 
 namespace oirancage\HolidayCreatorItemStructure\type;
 
-use pocketmine\nbt\tag\Tag;
+use oirancage\HolidayCreatorItemStructure\utils\Encodable;
 
-interface IType{
+interface IType extends Encodable{
 	public function getName(): string;
-	public function encode(): Tag;
 }
