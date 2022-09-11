@@ -16,6 +16,10 @@ class Root implements Encodable{
     ){
     }
 
+    public static function create(ItemProperties $itemProperties) : self{
+        return new self($itemProperties);
+    }
+
     /**
      * @return $this
      */
