@@ -18,6 +18,30 @@ class ItemProperties implements IComponent{
 	public int $maxDamage;
 	public Icon $icon;
 
+	public static function create(
+		int $useDuration,
+		int $useAnimation,
+		bool $allowOffHand,
+		bool $canDestroyInCreative,
+		bool $handEquipped,
+		int $maxStackSize,
+		float $miningSpeed,
+		int $maxDamage,
+		Icon $icon
+	) : self{
+		$result = new self;
+		$result->useDuration = $useDuration;
+		$result->useAnimation = $useAnimation;
+		$result->allowOffHand = $allowOffHand;
+		$result->canDestroyInCreative = $canDestroyInCreative;
+		$result->handEquipped = $handEquipped;
+		$result->maxStackSize = $maxStackSize;
+		$result->miningSpeed = $miningSpeed;
+		$result->maxDamage = $maxDamage;
+		$result->icon = $icon;
+		return $result;
+	}
+
 	public function getName() : string{
 		return "item_properties";
 	}
