@@ -8,17 +8,14 @@ use pocketmine\nbt\tag\Tag;
 
 class Armor implements IComponent{
 
-	const acceptableTextureTypes = [ "leather", "none", "chain", "iron", "diamond", "gold", "elytra", "turtle", "netherite" ];
-
 	private int $protection;
-	private string $textureType;
+	private TextureType $textureType;
 
 	public function create(
 		int $protection,
-		string $textureType
+		TextureType $textureType
 	){
 		Validator::validateRange($protection, min: 0);
-		Validator::validateTrue(in_array($textureType, self::acceptableTextureTypes, true));
 		$this->protection = $protection;
 		$this->textureType = $textureType;
 	}
@@ -30,6 +27,6 @@ class Armor implements IComponent{
 	public function encode() : Tag{
 		return CompoundTag::create()
 			->setInt("protection", $this->protection)
-			->setString("texture_type", $this->textureType);
+			->setString("texture_type", $this->textureType->getName());
 	}
 }
