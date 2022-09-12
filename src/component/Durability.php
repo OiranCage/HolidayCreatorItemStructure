@@ -26,9 +26,12 @@ class Durability implements IComponent{
 		return "minecraft:durability";
 	}
 
+	private const DAMAGE_CHANCE = "damage_chance";
+	private const MAX_DURABILITY = "max_durability";
+
 	public function encode() : CompoundTag{
 		return CompoundTag::create()
-			->setTag($this->damageChance->getName(), $this->damageChance->encode())
-			->setInt("max_durability", $this->maxDurability);
+			->setTag(self::DAMAGE_CHANCE, $this->damageChance->encode())
+			->setInt(self::MAX_DURABILITY, $this->maxDurability);
 	}
 }

@@ -23,10 +23,13 @@ class Armor implements IComponent{
 	public function getName() : string{
 		return "minecraft:armor";
 	}
+	
+	private const PROTECTION = "protection";
+	private const TEXTURE_TYPE = "texture_type";
 
 	public function encode() : Tag{
 		return CompoundTag::create()
-			->setInt("protection", $this->protection)
-			->setString("texture_type", $this->textureType->getName());
+			->setInt(self::PROTECTION, $this->protection)
+			->setString(self::TEXTURE_TYPE, $this->textureType->getName());
 	}
 }

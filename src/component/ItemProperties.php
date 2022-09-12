@@ -46,16 +46,26 @@ class ItemProperties implements IComponent{
 		return "item_properties";
 	}
 
+	private const ALLOW_OFFHAND = "allow_offhand";
+	private const CAN_DESTROY_IN_CREATIVE = "can_destroy_in_creative";
+	private const HAND_EQUIPPED = "hand_equipped";
+	private const MAX_DAMAGE = "max_damage";
+	private const MAX_STACK_SIZE = "max_stack_size";
+	private const MINECRAFT_ICON = "minecraft:icon";
+	private const MINING_SPEED = "mining_speed";
+	private const USE_ANIMATION = "use_animation";
+	private const USE_DURATION = "use_duration";
+
 	public function encode() : Tag{
 		return CompoundTag::create()
-			->setInt("use_duration", $this->useDuration)
-			->setInt("use_animation", $this->useAnimation)
-			->setByte("allowOffHand", (int) $this->allowOffHand)
-			->setByte("can_destroy_in_creative", (int) $this->canDestroyInCreative)
-			->setByte("hand_equipped", $this->handEquipped)
-			->setInt("max_stack_size", $this->maxStackSize)
-			->setFloat("mining_speed", $this->miningSpeed)
-			->setInt("max_damage", $this->maxDamage)
-			->setTag($this->icon->getName(), $this->icon->encode());
+			->setByte(self::ALLOW_OFFHAND, (int) $this->allowOffHand)
+			->setByte(self::CAN_DESTROY_IN_CREATIVE, (int) $this->canDestroyInCreative)
+			->setByte(self::HAND_EQUIPPED, $this->handEquipped)
+			->setInt(self::MAX_DAMAGE, $this->maxDamage)
+			->setInt(self::MAX_STACK_SIZE, $this->maxStackSize)
+			->setTag(self::MINECRAFT_ICON, $this->icon->encode())
+			->setFloat(self::MINING_SPEED, $this->miningSpeed)
+			->setInt(self::USE_DURATION, $this->useDuration)
+			->setInt(self::USE_ANIMATION, $this->useAnimation);
 	}
 }

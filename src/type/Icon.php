@@ -17,13 +17,13 @@ class Icon implements IType{
 		return $result;
 	}
 
-	public function getName() : string{
+	public static function getName() : string{
 		return "minecraft:icon";
 	}
 
 	public function encode() : CompoundTag{
 		return CompoundTag::create()
-			->setString("texture", $this->texture)
-			->setString("legacy_id", $this->legacyId);
+			->setString("legacy_id", $this->legacyId)
+			->setString("texture", $this->texture);
 	}
 }

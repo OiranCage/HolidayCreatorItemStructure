@@ -25,7 +25,7 @@ class Wearable implements IComponent{
 
 	public function encode() : Tag{
 		return CompoundTag::create()
-			->setString("slot", $this->armorSlot)
-			->setByte("dispensable", 1);
+			->setByte("dispensable", 1)
+			->setString("slot", $this->armorSlot);
 	}
 }

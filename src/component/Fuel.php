@@ -23,8 +23,10 @@ class Fuel implements IComponent{
 		return "minecraft:fuel";
 	}
 
+	private const DURATION = "duration";
+
 	public function encode() : Tag{
 		return CompoundTag::create()
-			->setFloat("duration", $this->duration);
+			->setFloat(self::DURATION, $this->duration);
 	}
 }

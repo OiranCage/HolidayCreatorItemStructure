@@ -25,9 +25,12 @@ class Cooldown implements IComponent{
 		return "minecraft:cooldown";
 	}
 
+	private const CATEGORY = "category";
+	private const DURATION = "duration";
+
 	public function encode() : Tag{
 		return CompoundTag::create()
-			->setString("category", $this->category)
-			->setFloat("duration", $this->duration);
+			->setString(self::CATEGORY, $this->category)
+			->setFloat(self::DURATION, $this->duration);
 	}
 }

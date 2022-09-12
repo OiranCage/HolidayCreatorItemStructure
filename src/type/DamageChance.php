@@ -29,7 +29,7 @@ class DamageChance implements IType{
 
 	public function encode() : CompoundTag{
 		return CompoundTag::create()
-			->setInt("min", $this->min)
-			->setInt("max", $this->max);
+			->setInt("max", $this->max)
+			->setInt("min", $this->min);
 	}
 }

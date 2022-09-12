@@ -30,10 +30,14 @@ class Food implements IComponent{
 		return "minecraft:food";
 	}
 
+	private const CAN_ALWAYS_EAT = "can_always_eat";
+	private const NUTRITION = "nutrition";
+	private const SATURATION_MODIFIER = "saturation_modifier";
+
 	public function encode() : Tag{
 		return CompoundTag::create()
-			->setByte("can_always_eat", $this->canAlwaysEat)
-			->setInt("nutrition", $this->nutrition)
-			->setFloat("saturation_modifier", $this->saturationModifier);
+			->setByte(self::CAN_ALWAYS_EAT, $this->canAlwaysEat)
+			->setInt(self::NUTRITION, $this->nutrition)
+			->setFloat(self::SATURATION_MODIFIER, $this->saturationModifier);
 	}
 }
