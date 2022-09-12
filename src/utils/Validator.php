@@ -17,7 +17,7 @@ final class Validator{
 		}
 	}
 
-	public static function validateTrue(bool $condition){
+	public static function validateTrue(bool $condition): void{
 		if(!$condition){
 			throw new ValidateException("the condition should be true but actually false.");
 		}

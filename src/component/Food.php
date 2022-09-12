@@ -16,7 +16,7 @@ class Food implements IComponent{
 		?bool $canAlwaysEat = null,
 		?int $nutrition = null,
 		?float $saturationModifier = null
-	): self{
+	) : self{
 		Validator::validateRange($saturationModifier, min: 0.0);
 
 		$result = new self;
@@ -36,7 +36,7 @@ class Food implements IComponent{
 
 	public function encode() : Tag{
 		return CompoundTag::create()
-			->setByte(self::CAN_ALWAYS_EAT, $this->canAlwaysEat)
+			->setByte(self::CAN_ALWAYS_EAT, (int) $this->canAlwaysEat)
 			->setInt(self::NUTRITION, $this->nutrition)
 			->setFloat(self::SATURATION_MODIFIER, $this->saturationModifier);
 	}

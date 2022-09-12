@@ -11,13 +11,20 @@ class Armor implements IComponent{
 	private int $protection;
 	private TextureType $textureType;
 
-	public function create(
+	public function __construct(
 		int $protection,
 		TextureType $textureType
 	){
 		Validator::validateRange($protection, min: 0);
 		$this->protection = $protection;
 		$this->textureType = $textureType;
+	}
+
+	public static function create(
+		int $protection,
+		TextureType $textureType
+	) : self{
+		return new self($protection, $textureType);
 	}
 
 	public function getName() : string{
