@@ -22,11 +22,6 @@ class RenderOffsets implements IComponent{
 		$result->offHand = $offHand;
 		return $result;
 	}
-
-	public function getName() : string{
-		return "minecraft:render_offsets";
-	}
-
 	
 	private const MAIN_HAND = "main_hand";
 	private const OFF_HAND = "off_hand";

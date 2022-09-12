@@ -42,10 +42,6 @@ class ItemProperties implements IComponent{
 		return $result;
 	}
 
-	public function getName() : string{
-		return "item_properties";
-	}
-
 	private const ALLOW_OFFHAND = "allow_offhand";
 	private const CAN_DESTROY_IN_CREATIVE = "can_destroy_in_creative";
 	private const HAND_EQUIPPED = "hand_equipped";
