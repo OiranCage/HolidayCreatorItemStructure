@@ -2,7 +2,8 @@
     "name": "oirancage/holiday-creator-item-structure",
     "type": "library",
     "require-dev": {
-        "pocketmine/nbt": "^0.3.3"
+        "pocketmine/nbt": "^0.3.3",
+        "phpstan/phpstan": "^1.8"
     },
     "license": "MIT",
     "authors": [
@@ -12,7 +13,6 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
     "autoload": {
         "psr-4": {
             "oirancage\\HolidayCreatorItemStructure\\": "src"
