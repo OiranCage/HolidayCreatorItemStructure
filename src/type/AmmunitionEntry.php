@@ -11,6 +11,15 @@ class AmmunitionEntry implements IType{
     public bool $useInCreative;
     public bool $useOffhand;
 
+    public static function create(Item $item, bool $serachInventory, bool $useInCreative, bool $useOffhand) : self{
+        $result = new self;
+        $result->item = $item;
+        $result->searchInventory = $serachInventory;
+        $result->useInCreative = $useInCreative;
+        $result->useOffhand = $useOffhand;
+        return $result;
+    }
+
     private const ITEM = "item";
     private const SEARCH_INVENTORY = "search_inventory";
     private const USE_IN_CREATIVE = "use_in_creative";
