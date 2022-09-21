@@ -7,8 +7,8 @@ use pocketmine\nbt\tag\CompoundTag;
 
 class DamageChance implements IType{
 
-	private int $max;
-	private int $min;
+	public int $max;
+	public int $min;
 
 	public static function create(
 		int $min = 100,

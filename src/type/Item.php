@@ -14,7 +14,7 @@ class Item implements IType{
         return $result;
     }
 
-    private const NAME = "name";
+    public const NAME = "name";
 
     public function encode(): CompoundTag{
         return CompoundTag::create()

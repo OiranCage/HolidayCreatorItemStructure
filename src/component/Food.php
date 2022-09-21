@@ -2,42 +2,39 @@
 
 namespace oirancage\HolidayCreatorItemStructure\component;
 
+use oirancage\HolidayCreatorItemStructure\Constants;
 use oirancage\HolidayCreatorItemStructure\utils\Validator;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\Tag;
 
 class Food implements IComponent{
 
-	private bool $canAlwaysEat;
-	private int $nutrition;
-	private float $saturationModifier;
+	public bool $canAlwaysEat;
+	public int $nutrition;
+	public float $saturationModifier;
 
 	public static function create(
-		?bool $canAlwaysEat = null,
-		?int $nutrition = null,
-		?float $saturationModifier = null
+		bool $canAlwaysEat,
+		int $nutrition,
+		float $saturationModifier
 	) : self{
 		Validator::validateRange($saturationModifier, min: 0.0);
 
 		$result = new self;
-		$result->canAlwaysEat = $canAlwaysEat ?? false;
-		$result->nutrition = $nutrition ?? 0;
-		$result->saturationModifier = $saturationModifier ?? 0.6;
+		$result->canAlwaysEat = $canAlwaysEat;
+		$result->nutrition = $nutrition;
+		$result->saturationModifier = $saturationModifier;
 		return $result;
 	}
 
-	public function getName() : string{
-		return "minecraft:food";
-	}
-
-	private const CAN_ALWAYS_EAT = "can_always_eat";
-	private const NUTRITION = "nutrition";
-	private const SATURATION_MODIFIER = "saturation_modifier";
-
 	public function encode() : Tag{
 		return CompoundTag::create()
-			->setByte(self::CAN_ALWAYS_EAT, (int) $this->canAlwaysEat)
-			->setInt(self::NUTRITION, $this->nutrition)
-			->setFloat(self::SATURATION_MODIFIER, $this->saturationModifier);
+			->setByte(Constants::CAN_ALWAYS_EAT, (int) $this->canAlwaysEat)
+			->setInt(Constants::NUTRITION, $this->nutrition)
+			->setFloat(Constants::SATURATION_MODIFIER, $this->saturationModifier);
 	}
+
+	public function write(CompoundTag $tag): void{
+        $tag->setTag(Constants::MINECRAFT_FOOD, $this->encode());
+    }
 }

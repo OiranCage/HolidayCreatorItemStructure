@@ -2,30 +2,28 @@
 
 namespace oirancage\HolidayCreatorItemStructure\component;
 
+use oirancage\HolidayCreatorItemStructure\Constants;
 use oirancage\HolidayCreatorItemStructure\utils\Validator;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\Tag;
 
 class Wearable implements IComponent{
 
-	const acceptableArmorSlotTypes = [ "slot.weapon.mainhand", "none", "slot.weapon.offhand", "slot.armor.head", "slot.armor.chest", "slot.armor.legs", "slot.armor.feet", "slot.hotbar", "slot.inventory", "slot.enderchest", "slot.saddle", "slot.armor", "slot.chest", "slot.equippable" ];
+	public ArmorSlotType $armorSlot;
 
-	private string $armorSlot;
-
-	public static function create(string $armorSlot) : self{
-		Validator::validateTrue(in_array($armorSlot, self::acceptableArmorSlotTypes));
+	public static function create(ArmorSlotType $armorSlot) : self{
 		$result = new self;
 		$result->armorSlot = $armorSlot;
 		return $result;
 	}
 
-	public function getName() : string{
-		return "minecraft:wearable";
-	}
-
 	public function encode() : Tag{
 		return CompoundTag::create()
-			->setByte("dispensable", 1)
-			->setString("slot", $this->armorSlot);
+			->setByte(Constants::DISPENSABLE, 1)
+			->setString(Constants::SLOT, $this->armorSlot->getValue());
 	}
+
+	public function write(CompoundTag $tag): void{
+        $tag->setTag(Constants::MINECRAFT_WEARABLE, $this->encode());
+    }
 }

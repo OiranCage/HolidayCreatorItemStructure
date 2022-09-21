@@ -2,14 +2,15 @@
 
 namespace oirancage\HolidayCreatorItemStructure\component;
 
+use oirancage\HolidayCreatorItemStructure\Constants;
 use oirancage\HolidayCreatorItemStructure\type\DamageChance;
 use oirancage\HolidayCreatorItemStructure\utils\Validator;
 use pocketmine\nbt\tag\CompoundTag;
 
 class Durability implements IComponent{
 
-	private DamageChance $damageChance;
-	private int $maxDurability;
+	public DamageChance $damageChance;
+	public int $maxDurability;
 
 	public static function create(
 		DamageChance $damageChance,
@@ -22,16 +23,13 @@ class Durability implements IComponent{
 		return $result;
 	}
 
-	public function getName() : string{
-		return "minecraft:durability";
-	}
-
-	private const DAMAGE_CHANCE = "damage_chance";
-	private const MAX_DURABILITY = "max_durability";
-
 	public function encode() : CompoundTag{
 		return CompoundTag::create()
-			->setTag(self::DAMAGE_CHANCE, $this->damageChance->encode())
-			->setInt(self::MAX_DURABILITY, $this->maxDurability);
+			->setTag(Constants::DAMAGE_CHANCE, $this->damageChance->encode())
+			->setInt(Constants::MAX_DRAW_DURATION, $this->maxDurability);
 	}
+
+	public function write(CompoundTag $tag): void{
+        $tag->setTag(Constants::MINECRAFT_DURABILITY, $this->encode());
+    }
 }

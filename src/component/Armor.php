@@ -2,41 +2,34 @@
 
 namespace oirancage\HolidayCreatorItemStructure\component;
 
+use oirancage\HolidayCreatorItemStructure\Constants;
 use oirancage\HolidayCreatorItemStructure\utils\Validator;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\Tag;
 
 class Armor implements IComponent{
 
-	private int $protection;
-	private TextureType $textureType;
-
-	public function __construct(
-		int $protection,
-		TextureType $textureType
-	){
-		Validator::validateRange($protection, min: 0);
-		$this->protection = $protection;
-		$this->textureType = $textureType;
-	}
+	public int $protection;
+	public TextureType $textureType;
 
 	public static function create(
 		int $protection,
 		TextureType $textureType
 	) : self{
-		return new self($protection, $textureType);
-	}
-
-	public function getName() : string{
-		return "minecraft:armor";
+		$result = new self;
+		Validator::validateRange($protection, min: 0);
+		$result->protection = $protection;
+		$result->textureType = $textureType;
+		return $result;
 	}
 	
-	private const PROTECTION = "protection";
-	private const TEXTURE_TYPE = "texture_type";
-
 	public function encode() : Tag{
 		return CompoundTag::create()
-			->setInt(self::PROTECTION, $this->protection)
-			->setString(self::TEXTURE_TYPE, $this->textureType->getName());
+			->setInt(Constants::PROTECTION, $this->protection)
+			->setString(Constants::TEXTURE_TYPE, $this->textureType->getName());
 	}
+
+	public function write(CompoundTag $tag): void{
+        $tag->setTag(Constants::MINECRAFT_ARMOR, $this->encode());
+    }
 }

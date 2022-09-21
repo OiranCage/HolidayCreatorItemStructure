@@ -8,9 +8,9 @@ use pocketmine\nbt\tag\ListTag;
 
 class Scale implements IType{
 
-	private float $x;
-	private float $y;
-	private float $z;
+	public float $x;
+	public float $y;
+	public float $z;
 
 	public static function create(
 		float $x,

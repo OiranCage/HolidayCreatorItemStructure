@@ -2,13 +2,14 @@
 
 namespace oirancage\HolidayCreatorItemStructure\component;
 
+use oirancage\HolidayCreatorItemStructure\Constants;
 use oirancage\HolidayCreatorItemStructure\utils\Validator;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\Tag;
 
 class Fuel implements IComponent{
 
-	private float $duration;
+	public float $duration;
 
 	public static function create(
 		float $duration
@@ -23,10 +24,12 @@ class Fuel implements IComponent{
 		return "minecraft:fuel";
 	}
 
-	private const DURATION = "duration";
-
 	public function encode() : Tag{
 		return CompoundTag::create()
-			->setFloat(self::DURATION, $this->duration);
+			->setFloat(Constants::DURATION, $this->duration);
 	}
+
+	public function write(CompoundTag $tag): void{
+        $tag->setTag(Constants::MINECRAFT_FUEL, $this->encode());
+    }
 }

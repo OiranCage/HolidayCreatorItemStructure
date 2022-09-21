@@ -5,8 +5,8 @@ namespace oirancage\HolidayCreatorItemStructure\type;
 use pocketmine\nbt\tag\CompoundTag;
 
 trait HandTransformTrait{
-	private Scale $firstPersonScale;
-	private Scale $thirdPersonScale;
+	public Scale $firstPersonScale;
+	public Scale $thirdPersonScale;
 
 	public function encode(): CompoundTag{
 		return CompoundTag::create()
