@@ -96,11 +96,16 @@ class ItemProperties implements IComponent{
 			->setByte(Constants::FOIL, (int) $this->foil)
 			->setInt(Constants::FRAME_COUNT, $this->frameCount)
 			->setByte(Constants::HAND_EQUIPPED, (int) $this->handEquipped)
+			->setByte(Constants::IGNORES_PERMISSION, (int) $this->ignoresPermission)
+			->setByte(Constants::LIQUID_CLIPPED, (int) $this->liquidClipped)
 			->setInt(Constants::MAX_STACK_SIZE, $this->maxStackSize)
 			->setTag(Constants::MINECRAFT_ICON, $this->icon->encode())
 			->setFloat(Constants::MINING_SPEED, $this->miningSpeed)
-			->setInt(Constants::USE_DURATION, $this->useDuration)
-			->setInt(Constants::USE_ANIMATION, $this->useAnimation);
+			->setByte(Constants::MIRRORED_ART, (int) $this->mirroredArt)
+			->setByte(Constants::SHOULD_DESPAWN, (int) $this->shouldDespawn)
+			->setByte(Constants::STACKED_BY_DATA, (int) $this->stackedByData)
+			->setInt(Constants::USE_ANIMATION, $this->useAnimation)
+			->setInt(Constants::USE_DURATION, $this->useDuration);
 	}
 
 	public function write(CompoundTag $tag): void{
