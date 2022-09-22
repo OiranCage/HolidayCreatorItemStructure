@@ -20,21 +20,21 @@ use pocketmine\nbt\tag\CompoundTag;
 
 class Root implements Encodable{
 
-    private ?Armor $armor = null;
-    private ?Chargeable $chargeable = null;
-    private ?Cooldown $cooldown = null;
-    private ?Digger $digger = null;
-    private ?DisplayName $displayName = null;
-    private ?Durability $durability = null;
-    private ?DyePowder $dyePowder = null;
-    private ?Food $food = null;
-    private ?Fuel $fuel = null;
-    private ?RenderOffsets $renderOffsets = null;
-    private ?Shooter $shooter = null;
-    private ?Wearable $wearable = null;
+    public ?Armor $armor = null;
+    public ?Chargeable $chargeable = null;
+    public ?Cooldown $cooldown = null;
+    public ?Digger $digger = null;
+    public ?DisplayName $displayName = null;
+    public ?Durability $durability = null;
+    public ?DyePowder $dyePowder = null;
+    public ?Food $food = null;
+    public ?Fuel $fuel = null;
+    public ?RenderOffsets $renderOffsets = null;
+    public ?Shooter $shooter = null;
+    public ?Wearable $wearable = null;
 
     public function __construct(
-        private ItemProperties $itemProperties
+        public ItemProperties $itemProperties
     ){
     }
 
