@@ -18,7 +18,7 @@ class DisplayName implements IComponent{
     }
 
     public function getName(): string{
-        return Constants::MINECRAFT_DISPLAY_NAME;
+        return Tags::DISPLAY_NAME;
     }
 
     public function encode() : CompoundTag{

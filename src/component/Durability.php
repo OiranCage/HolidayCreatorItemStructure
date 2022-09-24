@@ -26,7 +26,7 @@ class Durability implements IComponent{
 	}
 
 	public function getName(): string{
-        return Constants::MINECRAFT_DURABILITY;
+        return Tags::DURABILITY;
     }
 
 	public function encode() : CompoundTag{

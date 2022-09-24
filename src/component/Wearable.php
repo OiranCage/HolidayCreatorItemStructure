@@ -20,7 +20,7 @@ class Wearable implements IComponent{
 	}
 
 	public function getName(): string{
-        return Constants::MINECRAFT_WEARABLE;
+        return Tags::WEARABLE;
     }
 
 	public function encode() : Tag{

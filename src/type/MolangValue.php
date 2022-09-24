@@ -31,7 +31,7 @@ class MolangValue implements Encodable{
         }
 
         return match($this->version){
-            MolangVersion::V1 => $this->encodeV1()
+            MolangVersion::V1 => self::encodeV1($this->expression)
         };
     }
 
@@ -41,9 +41,9 @@ class MolangValue implements Encodable{
             ->setInt(Constants::VERSION, -1);
     }
 
-    protected function encodeV1() : CompoundTag{
+    protected static function encodeV1(string $expression) : CompoundTag{
         return CompoundTag::create()
-            ->setString(Constants::EXPRESSION, $this->expression)
+            ->setString(Constants::EXPRESSION, $expression)
             ->setInt(Constants::VERSION, 1);
     }
 }

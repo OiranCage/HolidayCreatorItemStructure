@@ -30,7 +30,7 @@ class Food implements IComponent{
 	}
 	
 	public function getName(): string{
-        return Constants::MINECRAFT_FOOD;
+        return Tags::FOOD;
     }
 
 	public function encode() : Tag{

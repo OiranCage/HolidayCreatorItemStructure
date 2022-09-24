@@ -21,7 +21,7 @@ class Throwable implements IComponent{
     }
 
     public function getName(): string{
-        return Constants::MINECRAFT_THROWABLE;
+        return Tags::THROWABLE;
     }
 
     public function encode(): CompoundTag{

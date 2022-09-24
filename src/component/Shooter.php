@@ -44,7 +44,7 @@ class Shooter implements IComponent{
 	}
 
     public function getName(): string{
-        return Constants::MINECRAFT_SHOOTER;
+        return Tags::SHOOTER;
     }
 
 	public function encode() : Tag{

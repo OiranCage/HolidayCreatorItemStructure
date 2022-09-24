@@ -23,7 +23,7 @@ class Fuel implements IComponent{
 	}
 
 	public function getName(): string{
-        return Constants::MINECRAFT_FUEL;
+        return Tags::FUEL;
     }
 
 	public function encode() : Tag{

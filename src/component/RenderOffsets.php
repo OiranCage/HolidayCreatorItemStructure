@@ -27,7 +27,7 @@ class RenderOffsets implements IComponent{
 	}
 
 	public function getName(): string{
-        return Constants::MINECRAFT_RENDER_OFFSETS;
+        return Tags::RENDER_OFFSETS;
     }
 	
 	public function encode() : Tag{

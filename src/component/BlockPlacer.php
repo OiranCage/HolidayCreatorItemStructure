@@ -3,28 +3,27 @@
 namespace oirancage\HolidayCreatorItemStructure\component;
 
 use oirancage\HolidayCreatorItemStructure\Constants;
-use oirancage\HolidayCreatorItemStructure\type\Color;
 use pocketmine\nbt\tag\CompoundTag;
+use pocketmine\nbt\tag\Tag;
 
-class DyePowder implements IComponent{
+class BlockPlacer implements IComponent{
 
     use WriteTagTrait;
 
-    public Color $color;
+    public string $block;
 
-    public static function create(Color $color) : self{
+    public static function create(string $block) : self{
         $result = new self;
-        $result->color = $color;
+        $result->block = $block;
         return $result;
     }
 
     public function getName(): string{
-        return Tags::DYE_POWDER;
+        return Tags::BLOCK_PLACER;
     }
 
     public function encode(): CompoundTag{
         return CompoundTag::create()
-            ->setString(Constants::COLOR, $this->color->getValue());
+            ->setString(Constants::BLOCK, $this->block);
     }
-
 }

@@ -25,7 +25,7 @@ class Cooldown implements IComponent{
 	}
 
 	public function getName(): string{
-		return Constants::MINECRAFT_COOLDOWN;
+		return Tags::COOLDOWN;
 	}
 
 	public function encode() : Tag{

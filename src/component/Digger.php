@@ -31,7 +31,7 @@ class Digger implements IComponent{
     }
 
     public function getName(): string{
-        return Constants::MINECRAFT_DIGGER;
+        return Tags::DIGGER;
     }
 
     public function encode(): CompoundTag{

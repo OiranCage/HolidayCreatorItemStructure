@@ -12,11 +12,15 @@ class Repairable implements IComponent{
 
     use WriteTagTrait;
 
-    public array $repairItems;
-
     /**
      * @var RepairItemEntry[]
      * @phpstan-var list<RepairItemEntry>
+     */
+    public array $repairItems;
+
+    /**
+     * @param RepairItemEntry[] $repairItems
+     * @phpstan-param list<RepairItemEntry> $repairItems
      */
     public static function create(array $repairItems) : self{
         $result = new self;
@@ -25,7 +29,7 @@ class Repairable implements IComponent{
     }
 
     public function getName(): string{
-        return Constants::MINECRAFT_REPAIRABLE;
+        return Tags::REPAIRABLE;
     }
 
     public function encode(): CompoundTag{

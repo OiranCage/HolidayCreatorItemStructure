@@ -19,7 +19,7 @@ class Chargeable implements IComponent{
     }
 
     public function getName(): string{
-        return Constants::MINECRAFT_CHARGEABLE;
+        return Tags::CHARGEABLE;
     }
 
     public function encode(): CompoundTag{

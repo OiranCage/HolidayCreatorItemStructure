@@ -26,7 +26,7 @@ class Armor implements IComponent{
 	}
 
 	public function getName(): string{
-        return Constants::MINECRAFT_ARMOR;
+        return Tags::ARMOR;
     }
 	
 	public function encode() : Tag{

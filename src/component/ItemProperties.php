@@ -85,7 +85,7 @@ class ItemProperties implements IComponent{
 	}
 
 	public function getName(): string{
-        return Constants::ITEM_PROPERTIES;
+        return Tags::ITEM_PROPERTIES;
     }
 
 	public function encode() : Tag{
