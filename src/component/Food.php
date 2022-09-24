@@ -9,6 +9,8 @@ use pocketmine\nbt\tag\Tag;
 
 class Food implements IComponent{
 
+	use WriteTagTrait;
+
 	public bool $canAlwaysEat;
 	public int $nutrition;
 	public float $saturationModifier;
@@ -26,6 +28,10 @@ class Food implements IComponent{
 		$result->saturationModifier = $saturationModifier;
 		return $result;
 	}
+	
+	public function getName(): string{
+        return Constants::MINECRAFT_FOOD;
+    }
 
 	public function encode() : Tag{
 		return CompoundTag::create()
@@ -34,7 +40,4 @@ class Food implements IComponent{
 			->setFloat(Constants::SATURATION_MODIFIER, $this->saturationModifier);
 	}
 
-	public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_FOOD, $this->encode());
-    }
 }

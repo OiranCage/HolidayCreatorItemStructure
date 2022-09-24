@@ -23,6 +23,7 @@ final class Constants{
     public const ENCHANTABLE_SLOT = "enchantable_slot";
     public const ENCHANTABLE_VALUE = "enchantable_value";
     public const EXPLODABLE = "explodable";
+    public const EXPRESSION = "expression";
     public const FIRST_PERSON = "first_person";
     public const FOIL = "foil";
     public const FRAME_COUNT = "frame_count";
@@ -30,6 +31,7 @@ final class Constants{
     public const IGNORES_PERMISSION = "ignores_permission";
     public const ITEM = "item";
     public const ITEM_PROPERTIES = "item_properties";
+    public const ITEMS = "items";
     public const LAUNCH_POWER_SCALE = "launch_power_scale";
     public const LIQUID_CLIPPED = "liquid_clipped";
     public const MAIN_HAND = "main_hand";
@@ -57,9 +59,12 @@ final class Constants{
     public const MINING_SPEED = "mining_speed";
     public const MIRRORED_ART = "mirrored_art";
     public const MOVEMENT_MODIFIER = "movement_modifier";
+    public const NAME = "name";
     public const NUTRITION = "nutrition";
     public const OFF_HAND = "off_hand";
     public const PROTECTION = "protection";
+    public const REPAIR_AMOUNT = "repair_amount";
+    public const REPAIR_ITEMS = "repair_items";
     public const REQUIRES_INTERACT = "requires_interact";
     public const SATURATION_MODIFIER = "saturation_modifier";
     public const SCALE_POWER_BY_DRAW_DURATION = "scale_power_by_draw_duration";
@@ -76,4 +81,5 @@ final class Constants{
     public const USE_IN_CREATIVE = "use_in_creative";
     public const USE_OFFHAND = "use_offhand";
     public const VALUE = "value";
+    public const VERSION = "version";
 }

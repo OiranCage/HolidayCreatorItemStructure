@@ -9,6 +9,8 @@ use pocketmine\nbt\tag\Tag;
 
 class Wearable implements IComponent{
 
+	use WriteTagTrait;
+
 	public ArmorSlotType $armorSlot;
 
 	public static function create(ArmorSlotType $armorSlot) : self{
@@ -17,13 +19,14 @@ class Wearable implements IComponent{
 		return $result;
 	}
 
+	public function getName(): string{
+        return Constants::MINECRAFT_WEARABLE;
+    }
+
 	public function encode() : Tag{
 		return CompoundTag::create()
 			->setByte(Constants::DISPENSABLE, 1)
 			->setString(Constants::SLOT, $this->armorSlot->getValue());
 	}
 
-	public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_WEARABLE, $this->encode());
-    }
 }

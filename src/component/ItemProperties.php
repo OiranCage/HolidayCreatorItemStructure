@@ -9,6 +9,8 @@ use pocketmine\nbt\tag\Tag;
 
 class ItemProperties implements IComponent{
 
+	use WriteTagTrait;
+
 	public bool $allowOffHand;
 	public bool $animatesInToolbar;
 	public bool $canDestroyInCreative;
@@ -82,6 +84,10 @@ class ItemProperties implements IComponent{
 		return $result;
 	}
 
+	public function getName(): string{
+        return Constants::ITEM_PROPERTIES;
+    }
+
 	public function encode() : Tag{
 		return CompoundTag::create()
 			->setByte(Constants::ALLOW_OFFHAND, (int) $this->allowOffHand)
@@ -107,8 +113,4 @@ class ItemProperties implements IComponent{
 			->setInt(Constants::USE_ANIMATION, $this->useAnimation)
 			->setInt(Constants::USE_DURATION, $this->useDuration);
 	}
-
-	public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::ITEM_PROPERTIES, $this->encode());
-    }
 }

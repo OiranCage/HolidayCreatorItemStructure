@@ -8,6 +8,8 @@ use pocketmine\nbt\tag\Tag;
 
 class Chargeable implements IComponent{
 
+    use WriteTagTrait;
+
     public float $movementModifier;
 
     public static function create(float $movementModifier) : self{
@@ -16,12 +18,12 @@ class Chargeable implements IComponent{
         return $result;
     }
 
+    public function getName(): string{
+        return Constants::MINECRAFT_CHARGEABLE;
+    }
+
     public function encode(): CompoundTag{
         return CompoundTag::create()
             ->setFloat(Constants::MOVEMENT_MODIFIER, $this->movementModifier);
-    }
-
-    public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_CHARGEABLE, $this->encode());
     }
 }

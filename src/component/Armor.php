@@ -9,6 +9,8 @@ use pocketmine\nbt\tag\Tag;
 
 class Armor implements IComponent{
 
+	use WriteTagTrait;
+
 	public int $protection;
 	public TextureType $textureType;
 
@@ -22,14 +24,14 @@ class Armor implements IComponent{
 		$result->textureType = $textureType;
 		return $result;
 	}
+
+	public function getName(): string{
+        return Constants::MINECRAFT_ARMOR;
+    }
 	
 	public function encode() : Tag{
 		return CompoundTag::create()
 			->setInt(Constants::PROTECTION, $this->protection)
 			->setString(Constants::TEXTURE_TYPE, $this->textureType->getName());
 	}
-
-	public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_ARMOR, $this->encode());
-    }
 }

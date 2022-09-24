@@ -9,6 +9,8 @@ use pocketmine\nbt\tag\Tag;
 
 class Fuel implements IComponent{
 
+	use WriteTagTrait;
+
 	public float $duration;
 
 	public static function create(
@@ -20,16 +22,12 @@ class Fuel implements IComponent{
 		return $result;
 	}
 
-	public function getName() : string{
-		return "minecraft:fuel";
-	}
+	public function getName(): string{
+        return Constants::MINECRAFT_FUEL;
+    }
 
 	public function encode() : Tag{
 		return CompoundTag::create()
 			->setFloat(Constants::DURATION, $this->duration);
 	}
-
-	public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_FUEL, $this->encode());
-    }
 }

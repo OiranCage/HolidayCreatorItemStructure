@@ -9,6 +9,9 @@ use pocketmine\nbt\tag\ListTag;
 use pocketmine\nbt\tag\Tag;
 
 class Digger implements IComponent{
+
+    use WriteTagTrait;
+    
     /**
      * @var array<int, DestroySpeed>
      * @phpstan-var list<DestroySpeedEntry>
@@ -27,14 +30,13 @@ class Digger implements IComponent{
         return $result;
     }
 
+    public function getName(): string{
+        return Constants::MINECRAFT_DIGGER;
+    }
+
     public function encode(): CompoundTag{
         return CompoundTag::create()
             ->setTag(Constants::DESTORY_SPEEDS, new ListTag(array_map(fn(DestroySpeedEntry $entry) : CompoundTag => $entry->encode(), $this->destroySpeeds)))
             ->setByte(Constants::USE_EFFICIENCY, (int) $this->useEfficiency);
     }
-
-    public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_DIGGER, $this->encode());
-    }
-
 }

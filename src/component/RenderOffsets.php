@@ -11,6 +11,8 @@ use pocketmine\nbt\tag\Tag;
 
 class RenderOffsets implements IComponent{
 
+	use WriteTagTrait;
+
 	public Hand $mainHand;
 	public Hand $offHand;
 
@@ -23,14 +25,14 @@ class RenderOffsets implements IComponent{
 		$result->offHand = $offHand;
 		return $result;
 	}
+
+	public function getName(): string{
+        return Constants::MINECRAFT_RENDER_OFFSETS;
+    }
 	
 	public function encode() : Tag{
 		return CompoundTag::create()
 			->setTag(Constants::MAIN_HAND, $this->mainHand->encode())
 			->setTag(Constants::OFF_HAND, $this->offHand->encode());
 	}
-
-	public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_RENDER_OFFSETS, $this->encode());
-    }
 }

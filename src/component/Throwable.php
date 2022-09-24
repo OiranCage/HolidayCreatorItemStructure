@@ -7,12 +7,22 @@ use pocketmine\nbt\tag\CompoundTag;
 
 class Throwable implements IComponent{
 
+    use WriteTagTrait;
+
     public bool $doSwingAnimation;
     public float $launchPowerScale;
     public float $maxDrawDuration;
     public float $maxLaunchPower;
     public float $minDrawDuration;
     public bool $scalePowerByDrawDuration;
+
+    public static function create() : self{
+        return new self;
+    }
+
+    public function getName(): string{
+        return Constants::MINECRAFT_THROWABLE;
+    }
 
     public function encode(): CompoundTag{
         return CompoundTag::create()
@@ -24,7 +34,4 @@ class Throwable implements IComponent{
             ->setByte(Constants::SCALE_POWER_BY_DRAW_DURATION, (int) $this->scalePowerByDrawDuration);
     }
 
-    public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_THROWABLE, $this->encode());
-    }
 }

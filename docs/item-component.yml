@@ -1,0 +1,127 @@
+{
+  name: 'splaturn:squiffer',
+  nbt: {
+    type: 'compound',
+    name: '',
+    value: {
+      components: {
+        type: 'compound',
+        value: {
+          item_properties: {
+            type: 'compound',
+            value: {
+              allow_off_hand: { type: 'byte', value: 0 },
+              animates_in_toolbar: { type: 'byte', value: 0 },
+              can_destroy_in_creative: { type: 'byte', value: 1 },
+              creative_category: { type: 'int', value: 2 },
+              creative_group: { type: 'string', value: '' },
+              damage: { type: 'int', value: 0 },
+              enchantable_slot: { type: 'string', value: 'none' },
+              enchantable_value: { type: 'int', value: 0 },
+              explodable: { type: 'byte', value: 1 },
+              foil: { type: 'byte', value: 0 },
+              frame_count: { type: 'int', value: 1 },
+              hand_equipped: { type: 'byte', value: 1 },
+              ignores_permission: { type: 'byte', value: 0 },
+              liquid_clipped: { type: 'byte', value: 0 },
+              max_stack_size: { type: 'int', value: 64 },
+              'minecraft:icon': {
+                type: 'compound',
+                value: {
+                  legacy_id: { type: 'string', value: '' },
+                  texture: { type: 'string', value: 'blaze_rod' }
+                }
+              },
+              mining_speed: { type: 'float', value: 1 },
+              mirrored_art: { type: 'byte', value: 0 },
+              requires_interact: { type: 'byte', value: 0 },
+              should_despawn: { type: 'byte', value: 1 },
+              stacked_by_data: { type: 'byte', value: 0 },
+              use_animation: { type: 'int', value: 0 },
+              use_duration: { type: 'int', value: 0 }
+            }
+          },
+          item_tags: { type: 'list', value: { type: 'end', value: [] } },
+          'minecraft:display_name': {
+            type: 'compound',
+            value: { value: { type: 'string', value: 'Splat Rod' } }
+          },
+          'minecraft:fuel': {
+            type: 'compound',
+            value: { duration: { type: 'float', value: 200 } }
+          },
+          'minecraft:shooter': {
+            type: 'compound',
+            value: {
+              ammunition: {
+                type: 'list',
+                value: {
+                  type: 'compound',
+                  value: [
+                    {
+                      item: {
+                        type: 'compound',
+                        value: {
+                          name: {
+                            type: 'string',
+                            value: 'minecraft:arrow'
+                          }
+                        }
+                      },
+                      search_inventory: { type: 'byte', value: 1 },
+                      use_in_creative: { type: 'byte', value: 1 },
+                      use_offhand: { type: 'byte', value: 1 }
+                    }
+                  ]
+                }
+              },
+              charge_on_draw: { type: 'byte', value: 1 },
+              launch_power_scale: { type: 'float', value: 1 },
+              max_draw_duration: { type: 'float', value: 0 },
+              max_launch_power: { type: 'float', value: 1 },
+              scale_power_by_draw_duration: { type: 'byte', value: 0 }
+            }
+          }
+        }
+      },
+      id: { type: 'int', value: 257 },
+      name: { type: 'string', value: 'splaturn:squiffer' }
+    }
+  }
+},
+{
+  name: 'splaturn:quick_bomb',
+  nbt: {
+    type: 'compound',
+    name: '',
+    value: {
+      components: {
+        type: 'compound',
+        value: {
+          item_properties: {
+            type: 'compound',
+            value: {
+              use_duration: { type: 'int', value: 0 },
+              use_animation: { type: 'int', value: 0 },
+              allowOffHand: { type: 'byte', value: 0 },
+              can_destroy_in_creative: { type: 'byte', value: 1 },
+              hand_equipped: { type: 'byte', value: 1 },
+              max_stack_size: { type: 'int', value: 64 },
+              mining_speed: { type: 'float', value: 1 },
+              max_damage: { type: 'int', value: 1 },
+              'minecraft:icon': {
+                type: 'compound',
+                value: {
+                  texture: { type: 'string', value: 'blaze_rod' },
+                  legacy_id: { type: 'string', value: '' }
+                }
+              }
+            }
+          }
+        }
+      },
+      id: { type: 'int', value: 655 },
+      name: { type: 'string', value: 'splaturn:quick_bomb' }
+    }
+  }
+}

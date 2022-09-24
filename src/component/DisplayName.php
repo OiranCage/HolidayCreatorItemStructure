@@ -7,6 +7,7 @@ use pocketmine\nbt\tag\CompoundTag;
 
 class DisplayName implements IComponent{
 
+    use WriteTagTrait;
     
     public string $name;
 
@@ -16,12 +17,12 @@ class DisplayName implements IComponent{
         return $result;
     }
 
+    public function getName(): string{
+        return Constants::MINECRAFT_DISPLAY_NAME;
+    }
+
     public function encode() : CompoundTag{
         return CompoundTag::create()
             ->setString(Constants::VALUE, $this->name);
-    }
-
-    public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_DISPLAY_NAME, $this->encode());
     }
 }

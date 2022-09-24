@@ -9,6 +9,8 @@ use pocketmine\nbt\tag\CompoundTag;
 
 class Durability implements IComponent{
 
+	use WriteTagTrait;
+
 	public DamageChance $damageChance;
 	public int $maxDurability;
 
@@ -23,13 +25,14 @@ class Durability implements IComponent{
 		return $result;
 	}
 
+	public function getName(): string{
+        return Constants::MINECRAFT_DURABILITY;
+    }
+
 	public function encode() : CompoundTag{
 		return CompoundTag::create()
 			->setTag(Constants::DAMAGE_CHANCE, $this->damageChance->encode())
 			->setInt(Constants::MAX_DRAW_DURATION, $this->maxDurability);
 	}
 
-	public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_DURABILITY, $this->encode());
-    }
 }

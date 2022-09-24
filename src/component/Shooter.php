@@ -12,6 +12,8 @@ use pocketmine\nbt\tag\Tag;
 
 class Shooter implements IComponent{
 
+    use WriteTagTrait;
+
     /** @var AmmunitionEntry[] */
     public array $ammunition;
     public bool $chargeOnDraw;
@@ -41,6 +43,10 @@ class Shooter implements IComponent{
         return $result;
 	}
 
+    public function getName(): string{
+        return Constants::MINECRAFT_SHOOTER;
+    }
+
 	public function encode() : Tag{
 		return CompoundTag::create()
 			->setTag(Constants::AMMUNITION, new ListTag(array_map(fn(AmmunitionEntry $entry) : CompoundTag => $entry->encode(), $this->ammunition), NBT::TAG_Compound))
@@ -50,8 +56,4 @@ class Shooter implements IComponent{
             ->setFloat(Constants::MAX_LAUNCH_POWER, $this->maxLaunchPower)
             ->setByte(Constants::SCALE_POWER_BY_DRAW_DURATION, (int) $this->scalePowerByDrawDuration);
 	}
-
-    public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_SHOOTER, $this->encode());
-    }
 }

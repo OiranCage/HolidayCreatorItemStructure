@@ -9,6 +9,8 @@ use pocketmine\nbt\tag\Tag;
 
 class Cooldown implements IComponent{
 
+    use WriteTagTrait;
+
 	public string $category;
 	public float $duration;
 
@@ -22,13 +24,14 @@ class Cooldown implements IComponent{
 		return $result;
 	}
 
+	public function getName(): string{
+		return Constants::MINECRAFT_COOLDOWN;
+	}
+
 	public function encode() : Tag{
 		return CompoundTag::create()
 			->setString(Constants::CATEGORY, $this->category)
 			->setFloat(Constants::DURATION, $this->duration);
 	}
 
-	public function write(CompoundTag $tag): void{
-        $tag->setTag(Constants::MINECRAFT_COOLDOWN, $this->encode());
-    }
 }

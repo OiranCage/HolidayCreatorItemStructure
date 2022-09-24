@@ -2,6 +2,7 @@
 
 namespace oirancage\HolidayCreatorItemStructure\type;
 
+use oirancage\HolidayCreatorItemStructure\Constants;
 use pocketmine\nbt\tag\CompoundTag;
 
 class Item implements IType{
@@ -18,6 +19,6 @@ class Item implements IType{
 
     public function encode(): CompoundTag{
         return CompoundTag::create()
-            ->setString(self::NAME, $this->name);
+            ->setString(Constants::NAME, $this->name);
     }
 }
